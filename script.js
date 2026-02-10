@@ -789,13 +789,47 @@ setInterval(createParticle, 3000);
 // Mobile menu toggle
 const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
 const navLinksMenu = document.querySelector('.nav-links');
+const navOverlay = document.getElementById('navOverlay');
+
+function closeMobileMenu() {
+    navLinksMenu.classList.remove('active');
+    mobileMenuBtn.classList.remove('active');
+    if (navOverlay) navOverlay.classList.remove('active');
+    document.body.classList.remove('menu-open');
+}
+
+function openMobileMenu() {
+    navLinksMenu.classList.add('active');
+    mobileMenuBtn.classList.add('active');
+    if (navOverlay) navOverlay.classList.add('active');
+    document.body.classList.add('menu-open');
+}
 
 if (mobileMenuBtn) {
     mobileMenuBtn.addEventListener('click', () => {
-        navLinksMenu.classList.toggle('active');
-        mobileMenuBtn.classList.toggle('active');
+        const isOpen = navLinksMenu.classList.contains('active');
+        if (isOpen) {
+            closeMobileMenu();
+        } else {
+            openMobileMenu();
+        }
     });
 }
+
+// Close mobile menu when a nav link is clicked
+document.querySelectorAll('.nav-links .nav-link').forEach(link => {
+    link.addEventListener('click', () => {
+        closeMobileMenu();
+    });
+});
+
+// Close mobile menu when overlay is clicked
+if (navOverlay) {
+    navOverlay.addEventListener('click', () => {
+        closeMobileMenu();
+    });
+}
+
 
 // Smooth reveal on page load
 window.addEventListener('load', () => {
