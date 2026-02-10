@@ -78,7 +78,7 @@ const translations = {
         heroGreeting: "Hola, soy",
         heroName: "Ulises Castillo",
         heroRole: "Software Developer / DevOps",
-        heroDescription: "Estudiante de Ingeniería en Computación (8vo semestre) con experiencia en desarrollo de software usando Java, PHP, SQL y web development. Expandiéndome hacia DevOps/Cloud con Docker, CI/CD, Linux y automatización.",
+        heroDescription: "Estudiante de Ingeniería Informática (8vo semestre) con experiencia en desarrollo de software usando Java, PHP, SQL y web development. Expandiéndome hacia DevOps/Cloud con Docker, CI/CD, Linux y automatización.",
         heroButtonProjects: "Ver Proyectos",
         heroButtonEmail: "Enviar Email",
         statTech: "Tecnologías",
@@ -88,7 +88,7 @@ const translations = {
         // About
         aboutTag: "Conóceme",
         aboutTitle: "Sobre Mí",
-        aboutHeading: "Estudiante de Ingeniería en Computación - 8vo Semestre",
+        aboutHeading: "Estudiante de Ingeniería Informática - 8vo Semestre",
         aboutDesc1: "Desarrollador de software con experiencia en proyectos académicos y reales usando Java, PHP, SQL, HTML, CSS y JavaScript. Sólida base en desarrollo web Full Stack con enfoque en backend y bases de datos.",
         aboutDesc2: "Expandiendo competencias hacia DevOps/Cloud con experiencia práctica en Docker, Git, CI/CD pipelines, Linux y AWS/Azure. Apasionado por la automatización, infraestructura como código y sistemas confiables.",
         infoEmail: "Email",
@@ -140,9 +140,17 @@ const translations = {
         autobalanceItem1: "Frontend con HTML, CSS, Bootstrap, JS",
         autobalanceItem2: "Backend PHP + MySQL",
         autobalanceItem3: "Deploy en entorno público",
+        limonTitle: "Sistema de Trazabilidad del Limón",
+        limonRole: "Desarrollador Full Stack",
+        limonDesc: "Sistema web para gestión completa de la cadena de producción de limón: desde siembra hasta venta final. Implementa bases de datos distribuidas con fragmentación vertical y horizontal.",
+        limonItem1: "Arquitectura distribuida con fragmentación vertical/horizontal",
+        limonItem2: "Motor FEDERATED de MySQL para consultas inter-servidor",
+        limonItem3: "Trazabilidad completa con JOINs complejos",
+        limonItem4: "Sistema CRUD: Siembras, Cosechas, Lotes, Ventas y Mermas",
+        limonItem5: "Dashboard con estadísticas en tiempo real",
         projectLink: "Ver proyecto",
         tecnmDate: "2022 - 2027",
-        tecnmTitle: "Ingeniería en Computación",
+        tecnmTitle: "Ingeniería Informática",
         tecnmPlace: "TECNM Universidad Apatzingán Campus",
         tecnmDesc: "Formación integral en desarrollo de software, infraestructura, bases de datos y sistemas.",
         cobaemDate: "2019 - 2022",
@@ -247,6 +255,14 @@ const translations = {
         autobalanceItem1: "Frontend with HTML, CSS, Bootstrap, JS",
         autobalanceItem2: "Backend PHP + MySQL",
         autobalanceItem3: "Deploy in public environment",
+        limonTitle: "Lemon Traceability System",
+        limonRole: "Full Stack Developer",
+        limonDesc: "Web system for complete management of lemon production chain: from planting to final sale. Implements distributed databases with vertical and horizontal fragmentation.",
+        limonItem1: "Distributed architecture with vertical/horizontal fragmentation",
+        limonItem2: "MySQL FEDERATED engine for inter-server queries",
+        limonItem3: "Complete traceability with complex JOINs",
+        limonItem4: "CRUD system: Planting, Harvests, Batches, Sales and Waste",
+        limonItem5: "Dashboard with real-time statistics",
         projectLink: "View project",
         tecnmDate: "2022 - 2027",
         tecnmTitle: "Computer Engineering",
@@ -286,7 +302,7 @@ let currentLang = 'es';
 function translatePage(lang) {
     currentLang = lang;
     const t = translations[lang];
-    
+
     console.log('Translating to:', lang);
 
     // Update language button text
@@ -432,7 +448,7 @@ function translatePage(lang) {
     console.log('Translating experience section...');
     const expCategoryTitles = document.querySelectorAll('.exp-category-title');
     console.log('Found exp-category-titles:', expCategoryTitles.length);
-    
+
     if (expCategoryTitles[0]) {
         const nodes = expCategoryTitles[0].childNodes;
         if (nodes[nodes.length - 1]) nodes[nodes.length - 1].textContent = ' ' + t.expProjects;
@@ -451,6 +467,7 @@ function translatePage(lang) {
     console.log('Found project-badges:', projectBadges.length);
     if (projectBadges[0]) projectBadges[0].textContent = t.badgeReal;
     if (projectBadges[1]) projectBadges[1].textContent = t.badgeAcademic;
+    if (projectBadges[2]) projectBadges[2].textContent = t.badgeAcademic;
 
     // Theater project
     const projectCards = document.querySelectorAll('.project-card');
@@ -477,6 +494,19 @@ function translatePage(lang) {
         if (items[2]) items[2].textContent = t.autobalanceItem3;
         const link = projectCards[1].querySelector('.project-link');
         if (link) link.textContent = t.projectLink + ' →';
+    }
+
+    // LIMON project
+    if (projectCards[2]) {
+        projectCards[2].querySelector('h4').textContent = t.limonTitle;
+        projectCards[2].querySelector('.project-role').textContent = t.limonRole;
+        projectCards[2].querySelector('.project-desc').textContent = t.limonDesc;
+        const items = projectCards[2].querySelectorAll('.project-highlights li');
+        if (items[0]) items[0].textContent = t.limonItem1;
+        if (items[1]) items[1].textContent = t.limonItem2;
+        if (items[2]) items[2].textContent = t.limonItem3;
+        if (items[3]) items[3].textContent = t.limonItem4;
+        if (items[4]) items[4].textContent = t.limonItem5;
     }
 
     // Timeline education
