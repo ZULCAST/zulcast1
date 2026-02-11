@@ -1107,3 +1107,64 @@ document.querySelectorAll('.btn-toggle-exp').forEach(button => {
 });
 
 console.log('🚀 Portfolio loaded successfully!');
+
+// ==================== MODO OSCURO ====================
+// Theme toggle functionality
+const themeToggle = document.getElementById('themeToggle');
+const themeToggleMobile = document.getElementById('themeToggleMobile');
+const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+
+// Get saved theme from localStorage or use system preference
+function getSavedTheme() {
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+        return savedTheme;
+    }
+    return prefersDarkScheme.matches ? 'dark' : 'light';
+}
+
+// Apply theme to document
+function applyTheme(theme) {
+    if (theme === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'dark');
+    } else {
+        document.documentElement.removeAttribute('data-theme');
+    }
+    localStorage.setItem('theme', theme);
+    
+    // Update mobile theme label
+    const themeLabel = document.querySelector('.theme-label');
+    if (themeLabel) {
+        themeLabel.textContent = theme === 'dark' ? 'Modo Claro' : 'Modo Oscuro';
+    }
+}
+
+// Toggle theme function
+function toggleTheme() {
+    currentTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    applyTheme(currentTheme);
+}
+
+// Initialize theme on page load
+let currentTheme = getSavedTheme();
+applyTheme(currentTheme);
+
+// Theme toggle event listeners
+if (themeToggle) {
+    themeToggle.addEventListener('click', toggleTheme);
+}
+
+if (themeToggleMobile) {
+    themeToggleMobile.addEventListener('click', toggleTheme);
+}
+
+// Listen for system theme changes
+prefersDarkScheme.addEventListener('change', (e) => {
+    // Only auto-switch if user hasn't manually set a preference
+    if (!localStorage.getItem('theme')) {
+        currentTheme = e.matches ? 'dark' : 'light';
+        applyTheme(currentTheme);
+    }
+});
+
+console.log('🌙 Theme system initialized!');
