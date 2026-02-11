@@ -1111,7 +1111,6 @@ console.log('🚀 Portfolio loaded successfully!');
 // ==================== MODO OSCURO ====================
 // Theme toggle functionality
 const themeToggle = document.getElementById('themeToggle');
-const themeToggleMobile = document.getElementById('themeToggleMobile');
 const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
 
 // Get saved theme from localStorage or use system preference
@@ -1131,12 +1130,6 @@ function applyTheme(theme) {
         document.documentElement.removeAttribute('data-theme');
     }
     localStorage.setItem('theme', theme);
-    
-    // Update mobile theme label
-    const themeLabel = document.querySelector('.theme-label');
-    if (themeLabel) {
-        themeLabel.textContent = theme === 'dark' ? 'Modo Claro' : 'Modo Oscuro';
-    }
 }
 
 // Toggle theme function
@@ -1149,13 +1142,9 @@ function toggleTheme() {
 let currentTheme = getSavedTheme();
 applyTheme(currentTheme);
 
-// Theme toggle event listeners
+// Theme toggle event listener
 if (themeToggle) {
     themeToggle.addEventListener('click', toggleTheme);
-}
-
-if (themeToggleMobile) {
-    themeToggleMobile.addEventListener('click', toggleTheme);
 }
 
 // Listen for system theme changes
