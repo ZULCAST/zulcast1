@@ -78,9 +78,9 @@ const translations = {
         heroGreeting: "Hola, soy",
         heroName: "Ulises Castillo",
         heroRole: "Software Developer / DevOps",
-        heroDescription: "Estudiante de Ingeniería Informática (8vo semestre) con experiencia en desarrollo de software usando Java, PHP, SQL y web development. Expandiéndome hacia DevOps/Cloud con Docker, CI/CD, Linux y automatización.",
+        heroDescription: "Estudiante de Ingeniería Informática (8vo semestre) apasionado por crear soluciones innovadoras. Experiencia en desarrollo Full Stack con Java, PHP, SQL y tecnologías web modernas. Expandiéndome hacia el mundo DevOps/Cloud con Docker, CI/CD, Linux y automatización.",
         heroButtonProjects: "Ver Proyectos",
-        heroButtonEmail: "Enviar Email",
+        heroButtonEmail: "Contactar",
         statTech: "Tecnologías",
         statProjects: "Proyectos",
         statYears: "Años Estudiando",
@@ -119,6 +119,12 @@ const translations = {
         softCommDesc: "Traducción de requerimientos a soluciones",
         softDevOps: "Mentalidad DevOps",
         softDevOpsDesc: "Automatización y mejora continua",
+        softAdaptability: "Adaptabilidad",
+        softAdaptabilityDesc: "Rápido aprendizaje de nuevas tecnologías",
+        softTimeManagement: "Gestión del Tiempo",
+        softTimeManagementDesc: "Organización y cumplimiento de plazos",
+        softProactivity: "Proactividad",
+        softProactivityDesc: "Iniciativa para proponer mejoras",
 
         // Experience
         expTag: "Mi Trayectoria",
@@ -126,14 +132,45 @@ const translations = {
         expProjects: "Experiencia Laboral",
         expEducation: "Educación",
         expSchool: "Proyectos Académicos",
+        expPersonal: "Proyectos Personales",
         badgeReal: "PROYECTO REAL",
         badgeAcademic: "PROYECTO ACADÉMICO",
+        badgePersonal: "PROYECTO PERSONAL",
+        // PADDI
+        paddiTitle: "PADDI — Plataforma de Apoyo para Discalculia con IA",
+        paddiRole: "Colaborador Clave - Implementación de IA",
+        paddiDesc: "Plataforma educativa que ayuda a niños con discalculia y autismo a través de 9 juegos interactivos y análisis inteligente personalizado. Responsable del diseño e implementación completa del módulo de IA que genera reportes personalizados.",
+        paddiItem1: "Diseño e implementación completa del módulo de IA con Python y FastAPI",
+        paddiItem2: "Integración de Groq/OpenAI para análisis personalizado de progreso estudiantil",
+        paddiItem3: "Sistema de generación automática de reportes PDF con recomendaciones específicas",
+        paddiItem4: "Desarrollo de algoritmos de análisis de datos educativos",
+        paddiItem5: "Colaboración en arquitectura del sistema y base de datos",
+        paddiItem6: "Implementación de sistema de mensajería en tiempo real con Socket.IO",
+        // Qube
+        qubeTitle: "Qube - Generador de QR",
+        qubeRole: "Desarrollador Frontend",
+        qubeDesc: "Aplicación web para convertir URLs en códigos QR de forma instantánea. Interfaz moderna e intuitiva con experiencia de usuario fluida. Permite generar y descargar códigos QR con un solo clic.",
+        qubeItem1: "Generación instantánea de códigos QR",
+        qubeItem2: "Descarga directa en formato PNG",
+        qubeItem3: "Diseño responsivo y minimalista",
+        // POS
+        posTitle: "Sistema POS — Tienda de Abarrotes",
+        posRole: "Desarrollador Full Stack",
+        posDesc: "Aplicación de escritorio tipo Punto de Venta para una tienda de abarrotes real. Incluye sistema de login con roles (Administrador y Cajero), gestión completa de productos, proveedores y clientes con control de deudas y abonos, registro de ventas con corte de caja y generación de reportes profesionales.",
+        posItem1: "CRUD completo de Productos, Proveedores y Clientes",
+        posItem2: "Sistema de deudas y abonos para clientes",
+        posItem3: "Registro de ventas con corte de caja",
+        posItem4: "Reportes con JasperReports (clientes, productos, precios, proveedores)",
+        posItem5: "Inventario con buscador y filtro en tiempo real",
+        posItem6: "Interfaz con pestañas y roles de usuario (Admin/Cajero)",
         theaterTitle: "Sistema de Gestión de Teatro",
-        theaterRole: "Desarrollador Full Stack",
+        theaterRole: "Colaborador de Desarrollo",
         theaterDesc: "Sistema completo para gestión de teatro con venta de taquilla, manejo de usuarios, reportes, estadísticas, mapeo de asientos, impresión de tickets y creación de eventos con selección de sala.",
-        theaterItem1: "Testing y QA del sistema completo",
-        theaterItem2: "Desarrollo de módulo de estadísticas y descuentos",
-        theaterItem3: "Co-creación y diseño de base de datos",
+        theaterItem1: "Diseño y arquitectura de la base de datos",
+        theaterItem2: "Desarrollo de funcionalidades clave del módulo de administración",
+        theaterItem3: "Implementación del sistema de descuentos",
+        theaterItem4: "Colaboración en el módulo de estadísticas",
+        theaterItem5: "Testing y QA del sistema completo",
         autobalanceTitle: "Plataforma Web AutoBalance",
         autobalanceRole: "Desarrollador Full Stack",
         autobalanceDesc: "Plataforma web para taller automotriz con gestión de servicios, productos y usuarios.",
@@ -193,9 +230,9 @@ const translations = {
         heroGreeting: "Hi, I'm",
         heroName: "Ulises Castillo",
         heroRole: "Software Developer / DevOps",
-        heroDescription: "Computer Engineering student (8th semester) with experience in software development using Java, PHP, SQL and web development. Expanding into DevOps/Cloud with Docker, CI/CD, Linux and automation.",
+        heroDescription: "Computer Engineering student (8th semester) passionate about creating innovative solutions. Experience in Full Stack development with Java, PHP, SQL and modern web technologies. Expanding into the DevOps/Cloud world with Docker, CI/CD, Linux and automation.",
         heroButtonProjects: "View Projects",
-        heroButtonEmail: "Send Email",
+        heroButtonEmail: "Contact",
         statTech: "Technologies",
         statProjects: "Projects",
         statYears: "Years Studying",
@@ -234,6 +271,12 @@ const translations = {
         softCommDesc: "Translating requirements into solutions",
         softDevOps: "DevOps Mindset",
         softDevOpsDesc: "Automation and continuous improvement",
+        softAdaptability: "Adaptability",
+        softAdaptabilityDesc: "Fast learning of new technologies",
+        softTimeManagement: "Time Management",
+        softTimeManagementDesc: "Organization and meeting deadlines",
+        softProactivity: "Proactivity",
+        softProactivityDesc: "Initiative to propose improvements",
 
         // Experience
         expTag: "My Journey",
@@ -241,14 +284,45 @@ const translations = {
         expProjects: "Work Experience",
         expEducation: "Education",
         expSchool: "Academic Projects",
+        expPersonal: "Personal Projects",
         badgeReal: "REAL PROJECT",
         badgeAcademic: "ACADEMIC PROJECT",
+        badgePersonal: "PERSONAL PROJECT",
+        // PADDI
+        paddiTitle: "PADDI — Support Platform for Dyscalculia with AI",
+        paddiRole: "Key Contributor - AI Implementation",
+        paddiDesc: "Educational platform that helps children with dyscalculia and autism through 9 interactive games and personalized intelligent analysis. Responsible for the complete design and implementation of the AI module that generates personalized reports.",
+        paddiItem1: "Complete design and implementation of AI module with Python and FastAPI",
+        paddiItem2: "Integration of Groq/OpenAI for personalized student progress analysis",
+        paddiItem3: "Automatic PDF report generation system with specific recommendations",
+        paddiItem4: "Development of educational data analysis algorithms",
+        paddiItem5: "Collaboration on system architecture and database design",
+        paddiItem6: "Implementation of real-time messaging system with Socket.IO",
+        // Qube
+        qubeTitle: "Qube - QR Generator",
+        qubeRole: "Frontend Developer",
+        qubeDesc: "Web application to convert URLs into QR codes instantly. Modern and intuitive interface with smooth user experience. Generate and download QR codes with a single click.",
+        qubeItem1: "Instant QR code generation",
+        qubeItem2: "Direct download in PNG format",
+        qubeItem3: "Responsive and minimalist design",
+        // POS
+        posTitle: "POS System — Grocery Store",
+        posRole: "Full Stack Developer",
+        posDesc: "Desktop Point of Sale application for a real grocery store. Includes login system with roles (Administrator and Cashier), complete management of products, suppliers and customers with debt and payment control, sales recording with cash register closing and professional report generation.",
+        posItem1: "Complete CRUD for Products, Suppliers and Customers",
+        posItem2: "Debt and payment system for customers",
+        posItem3: "Sales recording with cash register closing",
+        posItem4: "Reports with JasperReports (customers, products, prices, suppliers)",
+        posItem5: "Inventory with real-time search and filter",
+        posItem6: "Tabbed interface and user roles (Admin/Cashier)",
         theaterTitle: "Theater Management System",
-        theaterRole: "Full Stack Developer",
+        theaterRole: "Development Collaborator",
         theaterDesc: "Complete theater management system with ticket sales, user management, reports, statistics, seat mapping, ticket printing and event creation with room selection.",
-        theaterItem1: "Testing and QA of complete system",
-        theaterItem2: "Development of statistics and discounts module",
-        theaterItem3: "Co-creation and database design",
+        theaterItem1: "Database design and architecture",
+        theaterItem2: "Development of key administration module features",
+        theaterItem3: "Implementation of discount system",
+        theaterItem4: "Collaboration on statistics module",
+        theaterItem5: "Testing and QA of complete system",
         autobalanceTitle: "AutoBalance Web Platform",
         autobalanceRole: "Full Stack Developer",
         autobalanceDesc: "Web platform for automotive workshop with service, product and user management.",
@@ -308,44 +382,7 @@ function translatePage(lang) {
     // Update language button text
     document.getElementById('langText').textContent = lang === 'es' ? 'EN' : 'ES';
 
-    // Update hero section
-    const heroAvailable = document.querySelector('.hero-badge span:last-child');
-    if (heroAvailable) heroAvailable.textContent = t.heroAvailable;
-
-    const heroGreeting = document.querySelector('.title-line');
-    if (heroGreeting) heroGreeting.textContent = t.heroGreeting;
-
-    const heroRole = document.querySelector('.typing-text');
-    if (heroRole) heroRole.textContent = t.heroRole;
-
-    const heroDesc = document.querySelector('.hero-description');
-    if (heroDesc) heroDesc.textContent = t.heroDescription;
-
-    // Update stats
-    const statLabels = document.querySelectorAll('.stat-label');
-    if (statLabels[0]) statLabels[0].textContent = t.statTech;
-    if (statLabels[1]) statLabels[1].textContent = t.statProjects;
-    if (statLabels[2]) statLabels[2].textContent = t.statYears;
-
-    // Update section headers
-    const sections = {
-        'sobre-mi': { tag: t.aboutTag, title: t.aboutTitle },
-        'habilidades': { tag: t.skillsTag, title: t.skillsTitle },
-        'experiencia': { tag: t.expTag, title: t.expTitle },
-        'certificaciones': { tag: t.certsTag, title: t.certsTitle }
-    };
-
-    Object.keys(sections).forEach(sectionId => {
-        const section = document.getElementById(sectionId);
-        if (section) {
-            const tag = section.querySelector('.section-tag');
-            const title = section.querySelector('.section-title');
-            if (tag) tag.textContent = sections[sectionId].tag;
-            if (title) title.textContent = sections[sectionId].title;
-        }
-    });
-
-    // Update nav links
+    // ========== NAVIGATION ==========
     const navLinks = document.querySelectorAll('.nav-link');
     if (navLinks[0]) navLinks[0].textContent = t.navHome;
     if (navLinks[1]) navLinks[1].textContent = t.navAbout;
@@ -353,26 +390,61 @@ function translatePage(lang) {
     if (navLinks[3]) navLinks[3].textContent = t.navExperience;
     if (navLinks[4]) navLinks[4].textContent = t.navCertifications;
 
-    // Update buttons
     const btnContact = document.querySelector('.btn-contact');
     if (btnContact) btnContact.textContent = t.navContact;
 
-    // ========== HERO BUTTONS ==========
+    // ========== HERO SECTION ==========
+    const heroAvailable = document.querySelector('.hero-badge span:last-child');
+    if (heroAvailable) heroAvailable.textContent = t.heroAvailable;
+
+    const heroGreeting = document.querySelector('.hero-greeting');
+    if (heroGreeting) heroGreeting.textContent = t.heroGreeting;
+
+    const heroName = document.querySelector('.hero-name');
+    if (heroName) heroName.textContent = t.heroName;
+
+    const heroRole = document.querySelector('.hero-role');
+    if (heroRole) heroRole.textContent = t.heroRole;
+
+    const heroDesc = document.querySelector('.hero-description');
+    if (heroDesc) {
+        // Preserve the <strong> tags
+        const parts = t.heroDescription.split(/(<strong>.*?<\/strong>)/g);
+        heroDesc.innerHTML = parts.join('');
+    }
+
+    // Hero buttons - preserve SVG
     const heroBtns = document.querySelectorAll('.hero-cta .btn');
     if (heroBtns[0]) {
+        const svg = heroBtns[0].querySelector('svg');
         const span = heroBtns[0].querySelector('span');
         if (span) span.textContent = t.heroButtonProjects;
     }
     if (heroBtns[1]) {
+        const svg = heroBtns[1].querySelector('svg');
         const span = heroBtns[1].querySelector('span');
         if (span) span.textContent = t.heroButtonEmail;
     }
 
+    // Stats
+    const statTexts = document.querySelectorAll('.stat-text');
+    if (statTexts[0]) statTexts[0].textContent = t.statTech;
+    if (statTexts[1]) statTexts[1].textContent = t.statProjects;
+    if (statTexts[2]) statTexts[2].textContent = t.statYears;
+
     // ========== ABOUT SECTION ==========
+    const aboutSection = document.getElementById('sobre-mi');
+    if (aboutSection) {
+        const tag = aboutSection.querySelector('.section-tag');
+        const title = aboutSection.querySelector('.section-title');
+        if (tag) tag.textContent = t.aboutTag;
+        if (title) title.textContent = t.aboutTitle;
+    }
+
     const aboutHeading = document.querySelector('.about-content h3');
     if (aboutHeading) aboutHeading.textContent = t.aboutHeading;
 
-    const aboutParas = document.querySelectorAll('.about-content p');
+    const aboutParas = document.querySelectorAll('.about-content > p');
     if (aboutParas[0]) aboutParas[0].textContent = t.aboutDesc1;
     if (aboutParas[1]) aboutParas[1].textContent = t.aboutDesc2;
 
@@ -383,41 +455,58 @@ function translatePage(lang) {
     if (infoLabels[2]) infoLabels[2].textContent = t.infoLocation;
     if (infoLabels[3]) infoLabels[3].textContent = t.infoGithub;
 
-    // About action buttons
+    // About buttons - preserve SVG
     const aboutBtns = document.querySelectorAll('.about-actions .btn');
-    if (aboutBtns[0]) aboutBtns[0].textContent = t.btnGithub;
-    if (aboutBtns[1]) aboutBtns[1].textContent = t.btnDownloadCV;
+    if (aboutBtns[0]) {
+        const svg = aboutBtns[0].querySelector('svg');
+        aboutBtns[0].innerHTML = '';
+        if (svg) aboutBtns[0].appendChild(svg);
+        aboutBtns[0].appendChild(document.createTextNode(t.btnGithub));
+    }
+    if (aboutBtns[1]) {
+        const svg = aboutBtns[1].querySelector('svg');
+        aboutBtns[1].innerHTML = '';
+        if (svg) aboutBtns[1].appendChild(svg);
+        aboutBtns[1].appendChild(document.createTextNode(t.btnDownloadCV));
+    }
 
-    // Experience cards
-    const expCards = document.querySelectorAll('.experience-card');
+    // Experience cards in about section
+    const expCards = document.querySelectorAll('.about-cards .experience-card');
     if (expCards[0]) {
-        const h4 = expCards[0].querySelector('h4');
-        const p = expCards[0].querySelector('p');
-        if (h4) h4.textContent = t.cardRealExp;
-        if (p) p.textContent = t.cardRealExpDesc;
+        expCards[0].querySelector('h4').textContent = t.cardRealExp;
+        expCards[0].querySelector('p').textContent = t.cardRealExpDesc;
     }
     if (expCards[1]) {
-        const h4 = expCards[1].querySelector('h4');
-        const p = expCards[1].querySelector('p');
-        if (h4) h4.textContent = t.cardCerts;
-        if (p) p.textContent = t.cardCertsDesc;
+        expCards[1].querySelector('h4').textContent = t.cardCerts;
+        expCards[1].querySelector('p').textContent = t.cardCertsDesc;
     }
     if (expCards[2]) {
-        const h4 = expCards[2].querySelector('h4');
-        const p = expCards[2].querySelector('p');
-        if (h4) h4.textContent = t.cardFullStack;
-        if (p) p.textContent = t.cardFullStackDesc;
+        expCards[2].querySelector('h4').textContent = t.cardFullStack;
+        expCards[2].querySelector('p').textContent = t.cardFullStackDesc;
     }
 
     // ========== SKILLS SECTION ==========
+    const skillsSection = document.getElementById('habilidades');
+    if (skillsSection) {
+        const tag = skillsSection.querySelector('.section-tag');
+        const title = skillsSection.querySelector('.section-title');
+        if (tag) tag.textContent = t.skillsTag;
+        if (title) title.textContent = t.skillsTitle;
+    }
+
+    // Category titles - preserve SVG
     const categoryTitles = document.querySelectorAll('.category-title');
     if (categoryTitles[0]) {
-        const nodes = categoryTitles[0].childNodes;
-        if (nodes[nodes.length - 1]) nodes[nodes.length - 1].textContent = ' ' + t.techSkills;
+        const svg = categoryTitles[0].querySelector('svg');
+        categoryTitles[0].innerHTML = '';
+        if (svg) categoryTitles[0].appendChild(svg);
+        categoryTitles[0].appendChild(document.createTextNode(t.techSkills));
     }
     if (categoryTitles[1]) {
-        const nodes = categoryTitles[1].childNodes;
-        if (nodes[nodes.length - 1]) nodes[nodes.length - 1].textContent = ' ' + t.softSkills;
+        const svg = categoryTitles[1].querySelector('svg');
+        categoryTitles[1].innerHTML = '';
+        if (svg) categoryTitles[1].appendChild(svg);
+        categoryTitles[1].appendChild(document.createTextNode(t.softSkills));
     }
 
     // Toggle button
@@ -443,70 +532,145 @@ function translatePage(lang) {
         softSkillCards[3].querySelector('h4').textContent = t.softDevOps;
         softSkillCards[3].querySelector('p').textContent = t.softDevOpsDesc;
     }
+    if (softSkillCards[4]) {
+        softSkillCards[4].querySelector('h4').textContent = t.softAdaptability;
+        softSkillCards[4].querySelector('p').textContent = t.softAdaptabilityDesc;
+    }
+    if (softSkillCards[5]) {
+        softSkillCards[5].querySelector('h4').textContent = t.softTimeManagement;
+        softSkillCards[5].querySelector('p').textContent = t.softTimeManagementDesc;
+    }
+    if (softSkillCards[6]) {
+        softSkillCards[6].querySelector('h4').textContent = t.softProactivity;
+        softSkillCards[6].querySelector('p').textContent = t.softProactivityDesc;
+    }
 
     // ========== EXPERIENCE SECTION ==========
-    console.log('Translating experience section...');
-    const expCategoryTitles = document.querySelectorAll('.exp-category-title');
-    console.log('Found exp-category-titles:', expCategoryTitles.length);
+    const expSection = document.getElementById('experiencia');
+    if (expSection) {
+        const tag = expSection.querySelector('.section-tag');
+        const title = expSection.querySelector('.section-title');
+        if (tag) tag.textContent = t.expTag;
+        if (title) title.textContent = t.expTitle;
+    }
 
+    // Experience category titles - preserve SVG
+    const expCategoryTitles = document.querySelectorAll('.exp-category-title');
     if (expCategoryTitles[0]) {
-        const nodes = expCategoryTitles[0].childNodes;
-        if (nodes[nodes.length - 1]) nodes[nodes.length - 1].textContent = ' ' + t.expProjects;
+        const svg = expCategoryTitles[0].querySelector('svg');
+        expCategoryTitles[0].innerHTML = '';
+        if (svg) expCategoryTitles[0].appendChild(svg);
+        expCategoryTitles[0].appendChild(document.createTextNode(t.expProjects));
     }
     if (expCategoryTitles[1]) {
-        const nodes = expCategoryTitles[1].childNodes;
-        if (nodes[nodes.length - 1]) nodes[nodes.length - 1].textContent = ' ' + t.expSchool;
+        const svg = expCategoryTitles[1].querySelector('svg');
+        expCategoryTitles[1].innerHTML = '';
+        if (svg) expCategoryTitles[1].appendChild(svg);
+        expCategoryTitles[1].appendChild(document.createTextNode(t.expPersonal));
     }
     if (expCategoryTitles[2]) {
-        const nodes = expCategoryTitles[2].childNodes;
-        if (nodes[nodes.length - 1]) nodes[nodes.length - 1].textContent = ' ' + t.expEducation;
+        const svg = expCategoryTitles[2].querySelector('svg');
+        expCategoryTitles[2].innerHTML = '';
+        if (svg) expCategoryTitles[2].appendChild(svg);
+        expCategoryTitles[2].appendChild(document.createTextNode(t.expSchool));
+    }
+    if (expCategoryTitles[3]) {
+        const svg = expCategoryTitles[3].querySelector('svg');
+        expCategoryTitles[3].innerHTML = '';
+        if (svg) expCategoryTitles[3].appendChild(svg);
+        expCategoryTitles[3].appendChild(document.createTextNode(t.expEducation));
     }
 
     // Project badges
     const projectBadges = document.querySelectorAll('.project-badge');
-    console.log('Found project-badges:', projectBadges.length);
     if (projectBadges[0]) projectBadges[0].textContent = t.badgeReal;
-    if (projectBadges[1]) projectBadges[1].textContent = t.badgeAcademic;
-    if (projectBadges[2]) projectBadges[2].textContent = t.badgeAcademic;
+    if (projectBadges[1]) projectBadges[1].textContent = t.badgePersonal;
+    if (projectBadges[2]) projectBadges[2].textContent = t.badgePersonal;
+    if (projectBadges[3]) projectBadges[3].textContent = t.badgeAcademic;
+    if (projectBadges[4]) projectBadges[4].textContent = t.badgeAcademic;
+    if (projectBadges[5]) projectBadges[5].textContent = t.badgeAcademic;
 
-    // Theater project
+    // Project cards
     const projectCards = document.querySelectorAll('.project-card');
-    console.log('Found project-cards:', projectCards.length);
+    
+    // Theater project (card 0)
     if (projectCards[0]) {
         projectCards[0].querySelector('h4').textContent = t.theaterTitle;
         projectCards[0].querySelector('.project-role').textContent = t.theaterRole;
         projectCards[0].querySelector('.project-desc').textContent = t.theaterDesc;
         const items = projectCards[0].querySelectorAll('.project-highlights li');
-        console.log('Theater items found:', items.length);
         if (items[0]) items[0].textContent = t.theaterItem1;
         if (items[1]) items[1].textContent = t.theaterItem2;
         if (items[2]) items[2].textContent = t.theaterItem3;
+        if (items[3]) items[3].textContent = t.theaterItem4;
+        if (items[4]) items[4].textContent = t.theaterItem5;
     }
 
-    // AutoBalance project
+    // PADDI project (card 1)
     if (projectCards[1]) {
-        projectCards[1].querySelector('h4').textContent = t.autobalanceTitle;
-        projectCards[1].querySelector('.project-role').textContent = t.autobalanceRole;
-        projectCards[1].querySelector('.project-desc').textContent = t.autobalanceDesc;
+        projectCards[1].querySelector('h4').textContent = t.paddiTitle;
+        projectCards[1].querySelector('.project-role').textContent = t.paddiRole;
+        projectCards[1].querySelector('.project-desc').textContent = t.paddiDesc;
         const items = projectCards[1].querySelectorAll('.project-highlights li');
-        if (items[0]) items[0].textContent = t.autobalanceItem1;
-        if (items[1]) items[1].textContent = t.autobalanceItem2;
-        if (items[2]) items[2].textContent = t.autobalanceItem3;
-        const link = projectCards[1].querySelector('.project-link');
+        if (items[0]) items[0].textContent = t.paddiItem1;
+        if (items[1]) items[1].textContent = t.paddiItem2;
+        if (items[2]) items[2].textContent = t.paddiItem3;
+        if (items[3]) items[3].textContent = t.paddiItem4;
+        if (items[4]) items[4].textContent = t.paddiItem5;
+        if (items[5]) items[5].textContent = t.paddiItem6;
+    }
+
+    // Qube project (card 2)
+    if (projectCards[2]) {
+        projectCards[2].querySelector('h4').textContent = t.qubeTitle;
+        projectCards[2].querySelector('.project-role').textContent = t.qubeRole;
+        projectCards[2].querySelector('.project-desc').textContent = t.qubeDesc;
+        const items = projectCards[2].querySelectorAll('.project-highlights li');
+        if (items[0]) items[0].textContent = t.qubeItem1;
+        if (items[1]) items[1].textContent = t.qubeItem2;
+        if (items[2]) items[2].textContent = t.qubeItem3;
+        const link = projectCards[2].querySelector('.project-link');
         if (link) link.textContent = t.projectLink + ' →';
     }
 
-    // LIMON project
-    if (projectCards[2]) {
-        projectCards[2].querySelector('h4').textContent = t.limonTitle;
-        projectCards[2].querySelector('.project-role').textContent = t.limonRole;
-        projectCards[2].querySelector('.project-desc').textContent = t.limonDesc;
-        const items = projectCards[2].querySelectorAll('.project-highlights li');
+    // AutoBalance project (card 3)
+    if (projectCards[3]) {
+        projectCards[3].querySelector('h4').textContent = t.autobalanceTitle;
+        projectCards[3].querySelector('.project-role').textContent = t.autobalanceRole;
+        projectCards[3].querySelector('.project-desc').textContent = t.autobalanceDesc;
+        const items = projectCards[3].querySelectorAll('.project-highlights li');
+        if (items[0]) items[0].textContent = t.autobalanceItem1;
+        if (items[1]) items[1].textContent = t.autobalanceItem2;
+        if (items[2]) items[2].textContent = t.autobalanceItem3;
+        const link = projectCards[3].querySelector('.project-link');
+        if (link) link.textContent = t.projectLink + ' →';
+    }
+
+    // LIMON project (card 4)
+    if (projectCards[4]) {
+        projectCards[4].querySelector('h4').textContent = t.limonTitle;
+        projectCards[4].querySelector('.project-role').textContent = t.limonRole;
+        projectCards[4].querySelector('.project-desc').textContent = t.limonDesc;
+        const items = projectCards[4].querySelectorAll('.project-highlights li');
         if (items[0]) items[0].textContent = t.limonItem1;
         if (items[1]) items[1].textContent = t.limonItem2;
         if (items[2]) items[2].textContent = t.limonItem3;
         if (items[3]) items[3].textContent = t.limonItem4;
         if (items[4]) items[4].textContent = t.limonItem5;
+    }
+
+    // POS project (card 5)
+    if (projectCards[5]) {
+        projectCards[5].querySelector('h4').textContent = t.posTitle;
+        projectCards[5].querySelector('.project-role').textContent = t.posRole;
+        projectCards[5].querySelector('.project-desc').textContent = t.posDesc;
+        const items = projectCards[5].querySelectorAll('.project-highlights li');
+        if (items[0]) items[0].textContent = t.posItem1;
+        if (items[1]) items[1].textContent = t.posItem2;
+        if (items[2]) items[2].textContent = t.posItem3;
+        if (items[3]) items[3].textContent = t.posItem4;
+        if (items[4]) items[4].textContent = t.posItem5;
+        if (items[5]) items[5].textContent = t.posItem6;
     }
 
     // Timeline education
@@ -527,6 +691,14 @@ function translatePage(lang) {
     }
 
     // ========== CERTIFICATIONS ==========
+    const certsSection = document.getElementById('certificaciones');
+    if (certsSection) {
+        const tag = certsSection.querySelector('.section-tag');
+        const title = certsSection.querySelector('.section-title');
+        if (tag) tag.textContent = t.certsTag;
+        if (title) title.textContent = t.certsTitle;
+    }
+
     const certCards = document.querySelectorAll('.cert-card');
     if (certCards[0]) {
         certCards[0].querySelector('h4').textContent = t.certAWS;
@@ -618,7 +790,7 @@ const statsObserver = new IntersectionObserver((entries) => {
     });
 }, { threshold: 0.5 });
 
-document.querySelectorAll('.stat-value').forEach(stat => {
+document.querySelectorAll('.stat-number').forEach(stat => {
     statsObserver.observe(stat);
 });
 

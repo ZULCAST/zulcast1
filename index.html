@@ -61,72 +61,94 @@
 
     <!-- Hero Section -->
     <section id="hero" class="hero-section">
-        <div class="hero-content">
-            <div class="hero-badge">
-                <span class="pulse-dot"></span>
-                <span>Disponible para trabajar</span>
-            </div>
-            <h1 class="hero-title">
-                <span class="title-line">Hola, soy</span>
-                <span class="title-name gradient-text">Ulises Castillo</span>
-            </h1>
-            <p class="hero-subtitle">
-                <span class="typing-text">Software Developer / DevOps</span>
-                <span class="cursor">|</span>
-            </p>
-            <p class="hero-description">
-                Estudiante de Ingeniería Informática (8vo semestre) con experiencia en desarrollo de software usando
-                Java, PHP, SQL y web development. Expandiéndome hacia DevOps/Cloud con Docker, CI/CD, Linux y
-                automatización.
-            </p>
-            <div class="hero-cta">
-                <a href="#experiencia" class="btn btn-primary">
-                    <span>Ver Proyectos</span>
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M5 12h14M12 5l7 7-7 7" />
-                    </svg>
-                </a>
-                <a href="mailto:ulises.castillo.personal@gmail.com" class="btn btn-secondary">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path
-                            d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                    </svg>
-                    <span>Enviar Email</span>
-                </a>
-            </div>
-            <div class="hero-stats">
-                <div class="stat-item">
-                    <span class="stat-value" data-value="19">0</span>
-                    <span class="stat-label">Tecnologías</span>
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <div class="hero-badge">
+                        <span class="pulse-dot"></span>
+                        <span>Disponible para trabajar</span>
+                    </div>
+                    <h1 class="hero-title">
+                        <span class="hero-greeting">Hola, soy</span>
+                        <span class="hero-name">Ulises Castillo</span>
+                        <span class="hero-role">Software Developer / DevOps</span>
+                    </h1>
+                    <p class="hero-description">
+                        Estudiante de Ingeniería Informática (8vo semestre) apasionado por crear soluciones innovadoras. 
+                        Experiencia en desarrollo Full Stack con <strong>Java, PHP, SQL</strong> y tecnologías web modernas. 
+                        Expandiéndome hacia el mundo <strong>DevOps/Cloud</strong> con Docker, CI/CD, Linux y automatización.
+                    </p>
+                    <div class="hero-cta">
+                        <a href="#experiencia" class="btn btn-primary">
+                            <span>Ver Proyectos</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M5 12h14M12 5l7 7-7 7" />
+                            </svg>
+                        </a>
+                        <a href="mailto:ulises.castillo.personal@gmail.com" class="btn btn-secondary">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path
+                                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                            </svg>
+                            <span>Contactar</span>
+                        </a>
+                    </div>
                 </div>
-                <div class="stat-divider"></div>
-                <div class="stat-item">
-                    <span class="stat-value" data-value="4">0</span>
-                    <span class="stat-label">Proyectos</span>
+                
+                <div class="hero-visual-new">
+                    <div class="hero-image-container">
+                        <div class="image-backdrop"></div>
+                        <img src="perfil.png" alt="Ulises Castillo" class="hero-image">
+                        <div class="floating-tech">
+                            <span class="tech-badge">Java</span>
+                            <span class="tech-badge">PHP</span>
+                            <span class="tech-badge">Docker</span>
+                            <span class="tech-badge">Python</span>
+                            <span class="tech-badge">MySQL</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="stat-divider"></div>
-                <div class="stat-item">
-                    <span class="stat-value" data-value="5">0</span>
-                    <span class="stat-label">Años Estudiando</span>
+            </div>
+            
+            <div class="hero-stats-new">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="16 18 22 12 16 6"></polyline>
+                            <polyline points="8 6 2 12 8 18"></polyline>
+                        </svg>
+                    </div>
+                    <div class="stat-info">
+                        <span class="stat-number" data-value="19">0</span>
+                        <span class="stat-text">Tecnologías</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
+                        </svg>
+                    </div>
+                    <div class="stat-info">
+                        <span class="stat-number" data-value="6">0</span>
+                        <span class="stat-text">Proyectos</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+                            <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+                        </svg>
+                    </div>
+                    <div class="stat-info">
+                        <span class="stat-number" data-value="4">0</span>
+                        <span class="stat-text">Años Estudiando</span>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="hero-visual">
-            <div class="profile-card">
-                <div class="card-glow"></div>
-                <div class="profile-image-wrapper">
-                    <img src="perfil.png" alt="Ulises Castillo" class="profile-img">
-                    <div class="profile-ring"></div>
-                </div>
-                <div class="tech-orbit">
-                    <div class="tech-icon" style="--i:1"><span>Java</span></div>
-                    <div class="tech-icon" style="--i:2"><span>PHP</span></div>
-                    <div class="tech-icon" style="--i:3"><span>Docker</span></div>
-                    <div class="tech-icon" style="--i:4"><span>Linux</span></div>
-                    <div class="tech-icon" style="--i:5"><span>Git</span></div>
-                </div>
-            </div>
-        </div>
+        
         <div class="scroll-indicator">
             <span>Scroll</span>
             <div class="scroll-line"></div>
@@ -517,6 +539,22 @@
                                 <div class="skill-progress" style="--progress: 70%"></div>
                             </div>
                         </div>
+                        <div class="skill-card hidden-skill">
+                            <div class="skill-header">
+                                <svg class="skill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <rect x="3" y="3" width="7" height="7"></rect>
+                                    <rect x="14" y="3" width="7" height="7"></rect>
+                                    <rect x="14" y="14" width="7" height="7"></rect>
+                                    <rect x="3" y="14" width="7" height="7"></rect>
+                                </svg>
+                                <span class="skill-level">75%</span>
+                            </div>
+                            <h4>Arquitectura de Software</h4>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="--progress: 75%"></div>
+                            </div>
+                        </div>
                     </div>
                     <div class="skills-toggle">
                         <button id="toggleSkills" class="btn btn-outline">
@@ -580,6 +618,31 @@
                             <h4>Mentalidad DevOps</h4>
                             <p>Automatización y mejora continua</p>
                         </div>
+                        <div class="soft-skill-card">
+                            <svg class="soft-skill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                            </svg>
+                            <h4>Adaptabilidad</h4>
+                            <p>Rápido aprendizaje de nuevas tecnologías</p>
+                        </div>
+                        <div class="soft-skill-card">
+                            <svg class="soft-skill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <polyline points="12 6 12 12 16 14"></polyline>
+                            </svg>
+                            <h4>Gestión del Tiempo</h4>
+                            <p>Organización y cumplimiento de plazos</p>
+                        </div>
+                        <div class="soft-skill-card">
+                            <svg class="soft-skill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"></path>
+                            </svg>
+                            <h4>Proactividad</h4>
+                            <p>Iniciativa para proponer mejoras</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -639,6 +702,29 @@
                         Proyectos Personales
                     </h3>
                     <div class="projects-grid">
+                        <article class="project-card featured">
+                            <div class="project-badge">PROYECTO PERSONAL</div>
+                            <div class="project-content">
+                                <h4>PADDI — Plataforma de Apoyo para Discalculia con IA</h4>
+                                <p class="project-role">Colaborador Clave - Implementación de IA</p>
+                                <p class="project-desc">Plataforma educativa que ayuda a niños con discalculia y
+                                    autismo a través de 9 juegos interactivos y análisis inteligente personalizado.
+                                    Incluye módulo de IA con Python/FastAPI que genera reportes PDF
+                                    únicos para cada niño, dashboard para tutores con seguimiento en tiempo real
+                                    y sistema de mensajería integrado.</p>
+                                <ul class="project-highlights">
+                                    <li>Diseño e implementación completa del módulo de IA con Python y FastAPI</li>
+                                    <li>Integración de Groq/OpenAI para análisis personalizado de progreso estudiantil</li>
+                                    <li>Sistema de generación automática de reportes PDF con recomendaciones específicas</li>
+                                    <li>Desarrollo de algoritmos de análisis de datos educativos</li>
+                                    <li>Colaboración en arquitectura del sistema y base de datos</li>
+                                    <li>Implementación de sistema de mensajería en tiempo real con Socket.IO</li>
+                                </ul>
+                                <div class="project-tags">
+                                    <span>PHP</span><span>MySQL</span><span>Python</span><span>FastAPI</span><span>JavaScript</span><span>Socket.IO</span><span>IA</span>
+                                </div>
+                            </div>
+                        </article>
                         <article class="project-card">
                             <div class="project-badge">PROYECTO PERSONAL</div>
                             <div class="project-content">
@@ -717,7 +803,7 @@
                         <article class="project-card">
                             <div class="project-badge">PROYECTO ACADÉMICO</div>
                             <div class="project-content">
-                                <h4>Sistema POS — Abarrotes Castillo</h4>
+                                <h4>Sistema POS — Tienda de Abarrotes</h4>
                                 <p class="project-role">Desarrollador Full Stack</p>
                                 <p class="project-desc">Aplicación de escritorio tipo Punto de Venta para una tienda de
                                     abarrotes real. Incluye sistema de login con roles (Administrador y Cajero), gestión
