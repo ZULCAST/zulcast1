@@ -133,6 +133,8 @@ const translations = {
         expEducation: "Educación",
         expSchool: "Proyectos Académicos",
         expPersonal: "Proyectos Personales",
+        btnShowProjects: "Ver más proyectos",
+        btnHideProjects: "Ocultar proyectos",
         badgeReal: "PROYECTO REAL",
         badgeAcademic: "PROYECTO ACADÉMICO",
         badgePersonal: "PROYECTO PERSONAL",
@@ -146,6 +148,14 @@ const translations = {
         paddiItem4: "Desarrollo de algoritmos de análisis de datos educativos",
         paddiItem5: "Colaboración en arquitectura del sistema y base de datos",
         paddiItem6: "Implementación de sistema de mensajería en tiempo real con Socket.IO",
+        // FlashShare
+        flashshareTitle: "FlashShare - Transferencia P2P",
+        flashshareRole: "Desarrollador Full Stack",
+        flashshareDesc: "Sistema de transferencia de archivos en tiempo real y efímero usando Node.js y WebSockets. Permite compartir archivos entre dispositivos instantáneamente sin almacenamiento permanente.",
+        flashshareItem1: "Transferencia en tiempo real con Socket.io",
+        flashshareItem2: "Manejo de Buffers y Streams para archivos binarios",
+        flashshareItem3: "Arquitectura efímera sin base de datos (In-Memory)",
+        flashshareItem4: "Interfaz moderna y responsiva",
         // Qube
         qubeTitle: "Qube - Generador de QR",
         qubeRole: "Desarrollador Frontend",
@@ -285,9 +295,20 @@ const translations = {
         expEducation: "Education",
         expSchool: "Academic Projects",
         expPersonal: "Personal Projects",
+        btnShowProjects: "View more projects",
+        btnHideProjects: "Hide projects",
         badgeReal: "REAL PROJECT",
         badgeAcademic: "ACADEMIC PROJECT",
         badgePersonal: "PERSONAL PROJECT",
+        // Theater
+        theaterTitle: "Theater Management System",
+        theaterRole: "Development Collaborator",
+        theaterDesc: "Complete theater management system with ticket sales, user management, reports, statistics, seat mapping, ticket printing and event creation with room selection.",
+        theaterItem1: "Database design and architecture",
+        theaterItem2: "Development of key administration module features",
+        theaterItem3: "Implementation of discount system",
+        theaterItem4: "Collaboration on statistics module",
+        theaterItem5: "Testing and QA of complete system",
         // PADDI
         paddiTitle: "PADDI — Support Platform for Dyscalculia with AI",
         paddiRole: "Key Contributor - AI Implementation",
@@ -298,6 +319,23 @@ const translations = {
         paddiItem4: "Development of educational data analysis algorithms",
         paddiItem5: "Collaboration on system architecture and database design",
         paddiItem6: "Implementation of real-time messaging system with Socket.IO",
+        // Limón
+        limonTitle: "Lemon Traceability System",
+        limonRole: "Full Stack Developer",
+        limonDesc: "Web system for complete management of lemon production chain: from planting to final sale. Implements distributed databases with vertical and horizontal fragmentation.",
+        limonItem1: "Distributed architecture with vertical/horizontal fragmentation",
+        limonItem2: "MySQL FEDERATED engine for inter-server queries",
+        limonItem3: "Complete traceability with complex JOINs",
+        limonItem4: "CRUD system: Planting, Harvests, Batches, Sales and Waste",
+        limonItem5: "Dashboard with real-time statistics",
+        // FlashShare
+        flashshareTitle: "FlashShare - P2P Transfer",
+        flashshareRole: "Full Stack Developer",
+        flashshareDesc: "Real-time ephemeral file transfer system using Node.js and WebSockets. Allows instant file sharing between devices without permanent storage.",
+        flashshareItem1: "Real-time transfer with Socket.io",
+        flashshareItem2: "Handling Buffers and Streams for binary files",
+        flashshareItem3: "Ephemeral architecture without database (In-Memory)",
+        flashshareItem4: "Modern and responsive interface",
         // Qube
         qubeTitle: "Qube - QR Generator",
         qubeRole: "Frontend Developer",
@@ -315,28 +353,13 @@ const translations = {
         posItem4: "Reports with JasperReports (customers, products, prices, suppliers)",
         posItem5: "Inventory with real-time search and filter",
         posItem6: "Tabbed interface and user roles (Admin/Cashier)",
-        theaterTitle: "Theater Management System",
-        theaterRole: "Development Collaborator",
-        theaterDesc: "Complete theater management system with ticket sales, user management, reports, statistics, seat mapping, ticket printing and event creation with room selection.",
-        theaterItem1: "Database design and architecture",
-        theaterItem2: "Development of key administration module features",
-        theaterItem3: "Implementation of discount system",
-        theaterItem4: "Collaboration on statistics module",
-        theaterItem5: "Testing and QA of complete system",
+        // AutoBalance
         autobalanceTitle: "AutoBalance Web Platform",
         autobalanceRole: "Full Stack Developer",
         autobalanceDesc: "Web platform for automotive workshop with service, product and user management.",
         autobalanceItem1: "Frontend with HTML, CSS, Bootstrap, JS",
         autobalanceItem2: "Backend PHP + MySQL",
         autobalanceItem3: "Deploy in public environment",
-        limonTitle: "Lemon Traceability System",
-        limonRole: "Full Stack Developer",
-        limonDesc: "Web system for complete management of lemon production chain: from planting to final sale. Implements distributed databases with vertical and horizontal fragmentation.",
-        limonItem1: "Distributed architecture with vertical/horizontal fragmentation",
-        limonItem2: "MySQL FEDERATED engine for inter-server queries",
-        limonItem3: "Complete traceability with complex JOINs",
-        limonItem4: "CRUD system: Planting, Harvests, Batches, Sales and Waste",
-        limonItem5: "Dashboard with real-time statistics",
         projectLink: "View project",
         tecnmDate: "2022 - 2027",
         tecnmTitle: "Computer Engineering",
@@ -581,18 +604,32 @@ function translatePage(lang) {
         expCategoryTitles[3].appendChild(document.createTextNode(t.expEducation));
     }
 
+    // Update toggle buttons text
+    document.querySelectorAll('.btn-toggle-exp').forEach(button => {
+        const targetId = button.getAttribute('data-target');
+        const targetContent = document.getElementById(targetId);
+        const toggleText = button.querySelector('.toggle-text');
+        
+        if (toggleText && targetContent) {
+            // Check current visibility state
+            const isVisible = targetContent.style.display === 'grid';
+            toggleText.textContent = isVisible ? t.btnHideProjects : t.btnShowProjects;
+        }
+    });
+
     // Project badges
     const projectBadges = document.querySelectorAll('.project-badge');
-    if (projectBadges[0]) projectBadges[0].textContent = t.badgeReal;
-    if (projectBadges[1]) projectBadges[1].textContent = t.badgePersonal;
-    if (projectBadges[2]) projectBadges[2].textContent = t.badgePersonal;
-    if (projectBadges[3]) projectBadges[3].textContent = t.badgeAcademic;
-    if (projectBadges[4]) projectBadges[4].textContent = t.badgeAcademic;
-    if (projectBadges[5]) projectBadges[5].textContent = t.badgeAcademic;
+    if (projectBadges[0]) projectBadges[0].textContent = t.badgeReal;        // Teatro
+    if (projectBadges[1]) projectBadges[1].textContent = t.badgePersonal;    // PADDI
+    if (projectBadges[2]) projectBadges[2].textContent = t.badgePersonal;    // Qube
+    if (projectBadges[3]) projectBadges[3].textContent = t.badgePersonal;    // FlashShare
+    if (projectBadges[4]) projectBadges[4].textContent = t.badgeAcademic;    // Limón (visible)
+    if (projectBadges[5]) projectBadges[5].textContent = t.badgeAcademic;    // POS
+    if (projectBadges[6]) projectBadges[6].textContent = t.badgeAcademic;    // AutoBalance
 
     // Project cards
     const projectCards = document.querySelectorAll('.project-card');
-    
+
     // Theater project (card 0)
     if (projectCards[0]) {
         projectCards[0].querySelector('h4').textContent = t.theaterTitle;
@@ -633,15 +670,16 @@ function translatePage(lang) {
         if (link) link.textContent = t.projectLink + ' →';
     }
 
-    // AutoBalance project (card 3)
+    // FlashShare project (card 3)
     if (projectCards[3]) {
-        projectCards[3].querySelector('h4').textContent = t.autobalanceTitle;
-        projectCards[3].querySelector('.project-role').textContent = t.autobalanceRole;
-        projectCards[3].querySelector('.project-desc').textContent = t.autobalanceDesc;
+        projectCards[3].querySelector('h4').textContent = t.flashshareTitle;
+        projectCards[3].querySelector('.project-role').textContent = t.flashshareRole;
+        projectCards[3].querySelector('.project-desc').textContent = t.flashshareDesc;
         const items = projectCards[3].querySelectorAll('.project-highlights li');
-        if (items[0]) items[0].textContent = t.autobalanceItem1;
-        if (items[1]) items[1].textContent = t.autobalanceItem2;
-        if (items[2]) items[2].textContent = t.autobalanceItem3;
+        if (items[0]) items[0].textContent = t.flashshareItem1;
+        if (items[1]) items[1].textContent = t.flashshareItem2;
+        if (items[2]) items[2].textContent = t.flashshareItem3;
+        if (items[3]) items[3].textContent = t.flashshareItem4;
         const link = projectCards[3].querySelector('.project-link');
         if (link) link.textContent = t.projectLink + ' →';
     }
@@ -671,6 +709,19 @@ function translatePage(lang) {
         if (items[3]) items[3].textContent = t.posItem4;
         if (items[4]) items[4].textContent = t.posItem5;
         if (items[5]) items[5].textContent = t.posItem6;
+    }
+
+    // AutoBalance project (card 6)
+    if (projectCards[6]) {
+        projectCards[6].querySelector('h4').textContent = t.autobalanceTitle;
+        projectCards[6].querySelector('.project-role').textContent = t.autobalanceRole;
+        projectCards[6].querySelector('.project-desc').textContent = t.autobalanceDesc;
+        const items = projectCards[6].querySelectorAll('.project-highlights li');
+        if (items[0]) items[0].textContent = t.autobalanceItem1;
+        if (items[1]) items[1].textContent = t.autobalanceItem2;
+        if (items[2]) items[2].textContent = t.autobalanceItem3;
+        const link = projectCards[6].querySelector('.project-link');
+        if (link) link.textContent = t.projectLink + ' →';
     }
 
     // Timeline education
@@ -1029,5 +1080,30 @@ function debounce(func, wait) {
 window.addEventListener('scroll', debounce(() => {
     // Your scroll logic here
 }, 10));
+
+// ==================== TOGGLE EXPERIENCE SECTIONS ====================
+document.querySelectorAll('.btn-toggle-exp').forEach(button => {
+    button.addEventListener('click', function() {
+        const targetId = this.getAttribute('data-target');
+        const targetContent = document.getElementById(targetId);
+        const toggleText = this.querySelector('.toggle-text');
+        const toggleIcon = this.querySelector('.toggle-icon');
+        const isVisible = targetContent.style.display !== 'none';
+        
+        if (isVisible) {
+            // Ocultar
+            targetContent.style.display = 'none';
+            toggleIcon.innerHTML = '<polyline points="6 9 12 15 18 9"></polyline>';
+            const t = translations[currentLang];
+            toggleText.textContent = t.btnShowProjects || 'Ver proyectos';
+        } else {
+            // Mostrar
+            targetContent.style.display = 'grid';
+            toggleIcon.innerHTML = '<polyline points="18 15 12 9 6 15"></polyline>';
+            const t = translations[currentLang];
+            toggleText.textContent = t.btnHideProjects || 'Ocultar proyectos';
+        }
+    });
+});
 
 console.log('🚀 Portfolio loaded successfully!');
