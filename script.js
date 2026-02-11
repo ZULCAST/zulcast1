@@ -210,7 +210,7 @@ const translations = {
         certLink: "Ver credencial →",
 
         // Footer
-        footerTagline: "Construyendo el futuro, una línea de código a la vez.",
+        footerTagline: "Transformando ideas en soluciones tecnológicas.",
         footerGithub: "GitHub",
         footerEmail: "Email",
         footerContact: "Contacto",
@@ -362,7 +362,7 @@ const translations = {
         certLink: "View credential →",
 
         // Footer
-        footerTagline: "Building the future, one line of code at a time.",
+        footerTagline: "Transforming ideas into technological solutions.",
         footerGithub: "GitHub",
         footerEmail: "Email",
         footerContact: "Contact",
@@ -730,7 +730,7 @@ function translatePage(lang) {
     if (footerLinks[2]) footerLinks[2].textContent = t.footerContact;
 
     const footerBottom = document.querySelector('.footer-bottom p');
-    if (footerBottom) footerBottom.textContent = `© 2024 Ulises Castillo Zamora. ${t.footerRights}`;
+    if (footerBottom) footerBottom.textContent = `© 2026 Ulises Castillo Zamora. ${t.footerRights}`;
 }
 
 // Language toggle
