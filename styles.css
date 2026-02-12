@@ -397,8 +397,8 @@ header.scrolled {
     gap: 1rem;
 }
 
-/* Ocultar nav-actions dentro del menú móvil en desktop */
-.nav-links .nav-actions {
+/* Ocultar nav-actions-mobile en desktop */
+.nav-actions-mobile {
     display: none;
 }
 
@@ -2177,12 +2177,12 @@ body.menu-open {
         right: -100%;
         width: 75%;
         max-width: 320px;
-        height: 100vh;
-        height: 100dvh;
+        height: auto;
+        max-height: 100vh;
         background: rgba(255, 255, 255, 0.97);
         backdrop-filter: blur(24px) saturate(180%);
         flex-direction: column;
-        padding: 5rem 2rem 2rem;
+        padding: 5rem 2rem 1rem;
         gap: 0;
         z-index: 1050;
         transition: right 0.4s cubic-bezier(0.22, 1, 0.36, 1);
@@ -2225,23 +2225,43 @@ body.menu-open {
         display: none !important;
     }
 
-    /* Mostrar botones dentro del menú móvil */
-    .nav-links .nav-actions {
+    /* Mostrar botones móviles dentro del menú */
+    .nav-actions-mobile {
         display: flex !important;
+        position: fixed;
+        top: auto;
+        bottom: 0;
+        right: -100%;
+        width: 75%;
+        max-width: 320px;
+        background: rgba(255, 255, 255, 0.97);
+        backdrop-filter: blur(24px) saturate(180%);
         flex-direction: column;
         gap: 0.75rem;
-        margin-top: 1.5rem;
-        padding-top: 1.5rem;
+        padding: 1.5rem 2rem 2rem;
+        z-index: 1050;
+        transition: right 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+        border-left: 1px solid var(--border-color);
         border-top: 1px solid var(--border-color);
+        box-shadow: -10px 0 40px rgba(0, 0, 0, 0.1);
     }
 
-    .nav-links .nav-actions .theme-toggle,
-    .nav-links .nav-actions .lang-toggle {
+    [data-theme="dark"] .nav-actions-mobile {
+        background: rgba(17, 24, 39, 0.97);
+        box-shadow: -10px 0 40px rgba(0, 0, 0, 0.5);
+    }
+
+    .nav-actions-mobile.active {
+        right: 0;
+    }
+
+    .nav-actions-mobile .theme-toggle,
+    .nav-actions-mobile .lang-toggle {
         width: 100%;
         justify-content: center;
     }
 
-    .nav-links .nav-actions .btn-contact {
+    .nav-actions-mobile .btn-contact {
         width: 100%;
         text-align: center;
         justify-content: center;

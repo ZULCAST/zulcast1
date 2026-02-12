@@ -1032,10 +1032,12 @@ setInterval(createParticle, 3000);
 // Mobile menu toggle
 const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
 const navLinksMenu = document.querySelector('.nav-links');
+const navActionsMobile = document.querySelector('.nav-actions-mobile');
 const navOverlay = document.getElementById('navOverlay');
 
 function closeMobileMenu() {
     navLinksMenu.classList.remove('active');
+    if (navActionsMobile) navActionsMobile.classList.remove('active');
     mobileMenuBtn.classList.remove('active');
     if (navOverlay) navOverlay.classList.remove('active');
     document.body.classList.remove('menu-open');
@@ -1043,6 +1045,7 @@ function closeMobileMenu() {
 
 function openMobileMenu() {
     navLinksMenu.classList.add('active');
+    if (navActionsMobile) navActionsMobile.classList.add('active');
     mobileMenuBtn.classList.add('active');
     if (navOverlay) navOverlay.classList.add('active');
     document.body.classList.add('menu-open');
