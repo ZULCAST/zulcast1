@@ -404,6 +404,12 @@ function translatePage(lang) {
 
     // Update language button text
     document.getElementById('langText').textContent = lang === 'es' ? 'EN' : 'ES';
+    
+    // Update mobile language button text
+    const langTextMobile = document.getElementById('langTextMobile');
+    if (langTextMobile) {
+        langTextMobile.textContent = lang === 'es' ? 'EN' : 'ES';
+    }
 
     // ========== NAVIGATION ==========
     const navLinks = document.querySelectorAll('.nav-link');
@@ -790,6 +796,16 @@ document.getElementById('langToggle').addEventListener('click', () => {
     translatePage(currentLang);
 });
 
+// Mobile language toggle
+const langToggleMobile = document.getElementById('langToggleMobile');
+if (langToggleMobile) {
+    langToggleMobile.addEventListener('click', () => {
+        currentLang = currentLang === 'es' ? 'en' : 'es';
+        translatePage(currentLang);
+        closeMobileMenu(); // Close mobile menu after language change
+    });
+}
+
 // ==================== ANIMACIONES Y EFECTOS ====================
 // Intersection Observer for fade-in animations
 const observerOptions = {
@@ -1046,6 +1062,13 @@ document.querySelectorAll('.nav-links .nav-link').forEach(link => {
     });
 });
 
+// Close mobile menu when mobile contact button is clicked
+document.querySelectorAll('.mobile-nav-actions .btn-contact').forEach(btn => {
+    btn.addEventListener('click', () => {
+        closeMobileMenu();
+    });
+});
+
 // Close mobile menu when overlay is clicked
 if (navOverlay) {
     navOverlay.addEventListener('click', () => {
@@ -1111,6 +1134,7 @@ console.log('🚀 Portfolio loaded successfully!');
 // ==================== MODO OSCURO ====================
 // Theme toggle functionality
 const themeToggle = document.getElementById('themeToggle');
+const themeToggleMobile = document.getElementById('themeToggleMobile');
 const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
 
 // Get saved theme from localStorage or use system preference
@@ -1138,13 +1162,21 @@ function toggleTheme() {
     applyTheme(currentTheme);
 }
 
-// Initialize theme on page load
-let currentTheme = getSavedTheme();
+// Initialize theme on page load - Default to light mode
+let currentTheme = localStorage.getItem('theme') || 'light';
 applyTheme(currentTheme);
 
 // Theme toggle event listener
 if (themeToggle) {
     themeToggle.addEventListener('click', toggleTheme);
+}
+
+// Mobile theme toggle event listener
+if (themeToggleMobile) {
+    themeToggleMobile.addEventListener('click', () => {
+        toggleTheme();
+        closeMobileMenu(); // Close mobile menu after theme change
+    });
 }
 
 // Listen for system theme changes
