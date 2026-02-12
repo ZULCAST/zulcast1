@@ -789,16 +789,26 @@ function translatePage(lang) {
 }
 
 // Language toggle
-document.getElementById('langToggle').addEventListener('click', () => {
-    currentLang = currentLang === 'es' ? 'en' : 'es';
-    translatePage(currentLang);
-});
+const langToggle = document.getElementById('langToggle');
+console.log('langToggle mobile:', langToggle);
+if (langToggle) {
+    langToggle.addEventListener('click', () => {
+        console.log('Mobile lang toggle clicked');
+        currentLang = currentLang === 'es' ? 'en' : 'es';
+        translatePage(currentLang);
+    });
+}
 
 // Language toggle desktop
-document.getElementById('langToggleDesktop').addEventListener('click', () => {
-    currentLang = currentLang === 'es' ? 'en' : 'es';
-    translatePage(currentLang);
-});
+const langToggleDesktop = document.getElementById('langToggleDesktop');
+console.log('langToggle desktop:', langToggleDesktop);
+if (langToggleDesktop) {
+    langToggleDesktop.addEventListener('click', () => {
+        console.log('Desktop lang toggle clicked');
+        currentLang = currentLang === 'es' ? 'en' : 'es';
+        translatePage(currentLang);
+    });
+}
 
 // ==================== ANIMACIONES Y EFECTOS ====================
 // Intersection Observer for fade-in animations
@@ -1122,6 +1132,8 @@ console.log('🚀 Portfolio loaded successfully!');
 // Theme toggle functionality
 const themeToggle = document.getElementById('themeToggle');
 const themeToggleDesktop = document.getElementById('themeToggleDesktop');
+console.log('themeToggle mobile:', themeToggle);
+console.log('themeToggle desktop:', themeToggleDesktop);
 const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
 
 // Get saved theme from localStorage or default to light
@@ -1135,6 +1147,7 @@ function getSavedTheme() {
 
 // Apply theme to document
 function applyTheme(theme) {
+    console.log('Applying theme:', theme);
     if (theme === 'dark') {
         document.documentElement.setAttribute('data-theme', 'dark');
     } else {
@@ -1145,6 +1158,7 @@ function applyTheme(theme) {
 
 // Toggle theme function
 function toggleTheme() {
+    console.log('Toggle theme called, current:', currentTheme);
     currentTheme = currentTheme === 'dark' ? 'light' : 'dark';
     applyTheme(currentTheme);
 }
@@ -1155,10 +1169,16 @@ applyTheme(currentTheme);
 
 // Theme toggle event listeners (both mobile and desktop)
 if (themeToggle) {
-    themeToggle.addEventListener('click', toggleTheme);
+    themeToggle.addEventListener('click', () => {
+        console.log('Mobile theme toggle clicked');
+        toggleTheme();
+    });
 }
 if (themeToggleDesktop) {
-    themeToggleDesktop.addEventListener('click', toggleTheme);
+    themeToggleDesktop.addEventListener('click', () => {
+        console.log('Desktop theme toggle clicked');
+        toggleTheme();
+    });
 }
 
 // Listen for system theme changes
