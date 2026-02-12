@@ -2311,7 +2311,7 @@ body.menu-open {
 
     /* Subtle pulse animation for mobile */
     .pulse-dot {
-        animation: pulseDotMobile 3s infinite ease-in-out;
+        animation: pulseDotMobile 5s infinite ease-in-out;
     }
 
     @keyframes pulseDotMobile {
