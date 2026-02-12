@@ -101,20 +101,7 @@
     --glow-secondary: 0 0 20px rgba(107, 114, 128, 0.2);
 }
 
-    /* Spacing */
-    --spacing-xs: 0.5rem;
-    --spacing-sm: 1rem;
-    --spacing-md: 1.5rem;
-    --spacing-lg: 2rem;
-    --spacing-xl: 3rem;
-    --spacing-2xl: 4rem;
 
-    /* Border radius */
-    --radius-sm: 8px;
-    --radius-md: 12px;
-    --radius-lg: 16px;
-    --radius-xl: 24px;
-}
 
 html {
     scroll-behavior: smooth;
@@ -286,7 +273,7 @@ header {
     box-shadow: var(--shadow-md);
     position: sticky;
     top: 0;
-    z-index: 1000;
+    z-index: 2000;
     transition: all 0.3s ease;
 }
 
@@ -397,8 +384,8 @@ header.scrolled {
     gap: 1rem;
 }
 
-/* Ocultar nav-actions-mobile en desktop */
-.nav-actions-mobile {
+/* Ocultar nav-actions dentro del menú móvil en desktop */
+.nav-links .nav-actions {
     display: none;
 }
 
@@ -424,7 +411,6 @@ header.scrolled {
     backdrop-filter: blur(10px);
     position: relative;
     overflow: hidden;
-    pointer-events: auto;
 }
 
 .theme-toggle:hover {
@@ -476,7 +462,6 @@ header.scrolled {
     font-size: 0.875rem;
     transition: all 0.3s ease;
     backdrop-filter: blur(10px);
-    pointer-events: auto;
 }
 
 .lang-toggle:hover {
@@ -571,7 +556,7 @@ header.scrolled {
     padding: 0.5rem 1rem;
     border-radius: 50px;
     width: fit-content;
-    animation: pulse 2s ease-in-out infinite;
+    /* animation: pulse 2s ease-in-out infinite; - Removed to prevent full badge blinking */
 }
 
 .pulse-dot {
@@ -579,14 +564,17 @@ header.scrolled {
     height: 8px;
     background: #6b7280;
     border-radius: 50%;
-    animation: pulseDot 2s ease-in-out infinite;
+    animation: pulseDot 3s ease-in-out infinite;
 }
 
 @keyframes pulseDot {
-    0%, 100% {
+
+    0%,
+    100% {
         opacity: 1;
         box-shadow: 0 0 0 0 rgba(107, 114, 128, 0.7);
     }
+
     50% {
         opacity: 0.8;
         box-shadow: 0 0 0 10px rgba(107, 114, 128, 0);
@@ -673,8 +661,13 @@ header.scrolled {
 }
 
 @keyframes rotate {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 .hero-image {
@@ -745,9 +738,12 @@ header.scrolled {
 }
 
 @keyframes float {
-    0%, 100% {
+
+    0%,
+    100% {
         transform: translateY(0px);
     }
+
     50% {
         transform: translateY(-15px);
     }
@@ -2102,6 +2098,30 @@ body.menu-open {
     overflow: hidden;
 }
 
+/* Default state for mobile menu */
+.mobile-menu-btn {
+    display: none;
+}
+
+.nav-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1500;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(4px);
+}
+
+.nav-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
 /* ==================== RESPONSIVE ==================== */
 
 /* -------- Tablet / Small Desktop (≤1024px) -------- */
@@ -2177,14 +2197,14 @@ body.menu-open {
         right: -100%;
         width: 75%;
         max-width: 320px;
-        height: auto;
-        max-height: 100vh;
+        height: 100vh;
+        height: 100dvh;
         background: rgba(255, 255, 255, 0.97);
         backdrop-filter: blur(24px) saturate(180%);
         flex-direction: column;
-        padding: 5rem 2rem 1rem;
+        padding: 5rem 2rem 2rem;
         gap: 0;
-        z-index: 1050;
+        z-index: 2500;
         transition: right 0.4s cubic-bezier(0.22, 1, 0.36, 1);
         border-left: 1px solid var(--border-color);
         box-shadow: -10px 0 40px rgba(0, 0, 0, 0.1);
@@ -2225,50 +2245,32 @@ body.menu-open {
         display: none !important;
     }
 
-    /* Mostrar botones móviles dentro del menú */
-    .nav-actions-mobile {
+    /* Mostrar botones dentro del menú móvil */
+    .nav-links .nav-actions {
         display: flex !important;
-        position: fixed;
-        top: auto;
-        bottom: 0;
-        right: -100%;
-        width: 75%;
-        max-width: 320px;
-        background: rgba(255, 255, 255, 0.97);
-        backdrop-filter: blur(24px) saturate(180%);
         flex-direction: column;
         gap: 0.75rem;
-        padding: 1.5rem 2rem 2rem;
-        z-index: 1050;
-        transition: right 0.4s cubic-bezier(0.22, 1, 0.36, 1);
-        border-left: 1px solid var(--border-color);
+        margin-top: 1.5rem;
+        padding-top: 1.5rem;
         border-top: 1px solid var(--border-color);
-        box-shadow: -10px 0 40px rgba(0, 0, 0, 0.1);
     }
 
-    [data-theme="dark"] .nav-actions-mobile {
-        background: rgba(17, 24, 39, 0.97);
-        box-shadow: -10px 0 40px rgba(0, 0, 0, 0.5);
-    }
-
-    .nav-actions-mobile.active {
-        right: 0;
-    }
-
-    .nav-actions-mobile .theme-toggle,
-    .nav-actions-mobile .lang-toggle {
+    .nav-links .nav-actions .theme-toggle,
+    .nav-links .nav-actions .lang-toggle {
         width: 100%;
         justify-content: center;
     }
 
-    .nav-actions-mobile .btn-contact {
+    .nav-links .nav-actions .btn-contact {
         width: 100%;
         text-align: center;
         justify-content: center;
     }
 
+    /* Ocultar overlay por defecto en mobile (ahora manejado globalmente) */
     .nav-overlay {
         display: block;
+        /* Solo para resetear si fuese necesario, pero manejamos active */
     }
 
     /* -- Hero -- */
@@ -2297,13 +2299,36 @@ body.menu-open {
     }
 
     .floating-tech {
-        display: none; /* Ocultar badges flotantes en móvil para evitar overflow */
+        display: none;
+        /* Ocultar badges flotantes en móvil para evitar overflow */
     }
 
     .hero-badge {
         justify-content: center;
         margin-bottom: 1rem;
         padding: 0.5rem 1rem;
+    }
+
+    /* Subtle pulse animation for mobile */
+    .pulse-dot {
+        animation: pulseDotMobile 3s infinite ease-in-out;
+    }
+
+    @keyframes pulseDotMobile {
+        0% {
+            transform: scale(0.95);
+            box-shadow: 0 0 0 0 rgba(107, 114, 128, 0.7);
+        }
+
+        70% {
+            transform: scale(1);
+            box-shadow: 0 0 0 6px rgba(107, 114, 128, 0);
+        }
+
+        100% {
+            transform: scale(0.95);
+            box-shadow: 0 0 0 0 rgba(107, 114, 128, 0);
+        }
     }
 
     .hero-badge span {
@@ -2627,8 +2652,8 @@ body.menu-open {
 
     .cert-icon svg {
         width: 32px;
-        height: 32px;
-    }
+
+
         height: 32px;
     }
 
@@ -2961,7 +2986,7 @@ body.menu-open {
         font-size: 1rem;
     }
 }
-}
+
 
 /* -------- Very Small Screens (≤360px) -------- */
 @media (max-width: 360px) {
@@ -3117,19 +3142,28 @@ body.menu-open {
 
 /* Touch targets mínimos de 44px para mejor usabilidad móvil */
 @media (max-width: 768px) {
-    .btn, .nav-link, .theme-toggle, .lang-toggle, .mobile-menu-btn {
+
+    .btn,
+    .nav-link,
+    .theme-toggle,
+    .lang-toggle,
+    .mobile-menu-btn {
         min-height: 44px;
         min-width: 44px;
     }
 
     /* Mejorar el área de toque para enlaces pequeños */
-    .project-link, .cert-link, .footer-links a {
+    .project-link,
+    .cert-link,
+    .footer-links a {
         padding: 0.5rem;
         margin: -0.5rem;
     }
 
     /* Prevenir zoom en inputs en iOS */
-    input, select, textarea {
+    input,
+    select,
+    textarea {
         font-size: 16px;
     }
 
@@ -3145,7 +3179,9 @@ body.menu-open {
     }
 
     /* Simplificar animaciones en móvil */
-    *, *::before, *::after {
+    *,
+    *::before,
+    *::after {
         animation-duration: 0.3s !important;
         animation-delay: 0s !important;
         transition-duration: 0.3s !important;

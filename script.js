@@ -3,7 +3,10 @@
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
+        const targetId = this.getAttribute('href');
+        if (!targetId || targetId === '#') return;
+
+        const target = document.querySelector(targetId);
         if (target) {
             const headerOffset = 80;
             const elementPosition = target.getBoundingClientRect().top;
@@ -613,7 +616,7 @@ function translatePage(lang) {
         const targetId = button.getAttribute('data-target');
         const targetContent = document.getElementById(targetId);
         const toggleText = button.querySelector('.toggle-text');
-        
+
         if (toggleText && targetContent) {
             // Check current visibility state
             const isVisible = targetContent.style.display === 'grid';
@@ -789,26 +792,16 @@ function translatePage(lang) {
 }
 
 // Language toggle
-const langToggle = document.getElementById('langToggle');
-console.log('langToggle mobile:', langToggle);
-if (langToggle) {
-    langToggle.addEventListener('click', () => {
-        console.log('Mobile lang toggle clicked');
-        currentLang = currentLang === 'es' ? 'en' : 'es';
-        translatePage(currentLang);
-    });
-}
+document.getElementById('langToggle').addEventListener('click', () => {
+    currentLang = currentLang === 'es' ? 'en' : 'es';
+    translatePage(currentLang);
+});
 
 // Language toggle desktop
-const langToggleDesktop = document.getElementById('langToggleDesktop');
-console.log('langToggle desktop:', langToggleDesktop);
-if (langToggleDesktop) {
-    langToggleDesktop.addEventListener('click', () => {
-        console.log('Desktop lang toggle clicked');
-        currentLang = currentLang === 'es' ? 'en' : 'es';
-        translatePage(currentLang);
-    });
-}
+document.getElementById('langToggleDesktop').addEventListener('click', () => {
+    currentLang = currentLang === 'es' ? 'en' : 'es';
+    translatePage(currentLang);
+});
 
 // ==================== ANIMACIONES Y EFECTOS ====================
 // Intersection Observer for fade-in animations
@@ -1032,12 +1025,10 @@ setInterval(createParticle, 3000);
 // Mobile menu toggle
 const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
 const navLinksMenu = document.querySelector('.nav-links');
-const navActionsMobile = document.querySelector('.nav-actions-mobile');
 const navOverlay = document.getElementById('navOverlay');
 
 function closeMobileMenu() {
     navLinksMenu.classList.remove('active');
-    if (navActionsMobile) navActionsMobile.classList.remove('active');
     mobileMenuBtn.classList.remove('active');
     if (navOverlay) navOverlay.classList.remove('active');
     document.body.classList.remove('menu-open');
@@ -1045,7 +1036,6 @@ function closeMobileMenu() {
 
 function openMobileMenu() {
     navLinksMenu.classList.add('active');
-    if (navActionsMobile) navActionsMobile.classList.add('active');
     mobileMenuBtn.classList.add('active');
     if (navOverlay) navOverlay.classList.add('active');
     document.body.classList.add('menu-open');
@@ -1062,8 +1052,8 @@ if (mobileMenuBtn) {
     });
 }
 
-// Close mobile menu when a nav link is clicked
-document.querySelectorAll('.nav-links .nav-link').forEach(link => {
+// Close mobile menu when any link inside is clicked
+document.querySelectorAll('.nav-links a').forEach(link => {
     link.addEventListener('click', () => {
         closeMobileMenu();
     });
@@ -1106,13 +1096,13 @@ window.addEventListener('scroll', debounce(() => {
 
 // ==================== TOGGLE EXPERIENCE SECTIONS ====================
 document.querySelectorAll('.btn-toggle-exp').forEach(button => {
-    button.addEventListener('click', function() {
+    button.addEventListener('click', function () {
         const targetId = this.getAttribute('data-target');
         const targetContent = document.getElementById(targetId);
         const toggleText = this.querySelector('.toggle-text');
         const toggleIcon = this.querySelector('.toggle-icon');
         const isVisible = targetContent.style.display !== 'none';
-        
+
         if (isVisible) {
             // Ocultar
             targetContent.style.display = 'none';
@@ -1135,8 +1125,6 @@ console.log('🚀 Portfolio loaded successfully!');
 // Theme toggle functionality
 const themeToggle = document.getElementById('themeToggle');
 const themeToggleDesktop = document.getElementById('themeToggleDesktop');
-console.log('themeToggle mobile:', themeToggle);
-console.log('themeToggle desktop:', themeToggleDesktop);
 const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
 
 // Get saved theme from localStorage or default to light
@@ -1150,7 +1138,6 @@ function getSavedTheme() {
 
 // Apply theme to document
 function applyTheme(theme) {
-    console.log('Applying theme:', theme);
     if (theme === 'dark') {
         document.documentElement.setAttribute('data-theme', 'dark');
     } else {
@@ -1161,7 +1148,6 @@ function applyTheme(theme) {
 
 // Toggle theme function
 function toggleTheme() {
-    console.log('Toggle theme called, current:', currentTheme);
     currentTheme = currentTheme === 'dark' ? 'light' : 'dark';
     applyTheme(currentTheme);
 }
@@ -1172,16 +1158,10 @@ applyTheme(currentTheme);
 
 // Theme toggle event listeners (both mobile and desktop)
 if (themeToggle) {
-    themeToggle.addEventListener('click', () => {
-        console.log('Mobile theme toggle clicked');
-        toggleTheme();
-    });
+    themeToggle.addEventListener('click', toggleTheme);
 }
 if (themeToggleDesktop) {
-    themeToggleDesktop.addEventListener('click', () => {
-        console.log('Desktop theme toggle clicked');
-        toggleTheme();
-    });
+    themeToggleDesktop.addEventListener('click', toggleTheme);
 }
 
 // Listen for system theme changes
