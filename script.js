@@ -402,14 +402,12 @@ function translatePage(lang) {
 
     console.log('Translating to:', lang);
 
-    // Update language button text
-    document.getElementById('langText').textContent = lang === 'es' ? 'EN' : 'ES';
-    
-    // Update mobile language button text
-    const langTextMobile = document.getElementById('langTextMobile');
-    if (langTextMobile) {
-        langTextMobile.textContent = lang === 'es' ? 'EN' : 'ES';
-    }
+    // Update language button text (both mobile and desktop)
+    const langText = document.getElementById('langText');
+    const langTextDesktop = document.getElementById('langTextDesktop');
+    const newText = lang === 'es' ? 'EN' : 'ES';
+    if (langText) langText.textContent = newText;
+    if (langTextDesktop) langTextDesktop.textContent = newText;
 
     // ========== NAVIGATION ==========
     const navLinks = document.querySelectorAll('.nav-link');
@@ -796,15 +794,11 @@ document.getElementById('langToggle').addEventListener('click', () => {
     translatePage(currentLang);
 });
 
-// Mobile language toggle
-const langToggleMobile = document.getElementById('langToggleMobile');
-if (langToggleMobile) {
-    langToggleMobile.addEventListener('click', () => {
-        currentLang = currentLang === 'es' ? 'en' : 'es';
-        translatePage(currentLang);
-        closeMobileMenu(); // Close mobile menu after language change
-    });
-}
+// Language toggle desktop
+document.getElementById('langToggleDesktop').addEventListener('click', () => {
+    currentLang = currentLang === 'es' ? 'en' : 'es';
+    translatePage(currentLang);
+});
 
 // ==================== ANIMACIONES Y EFECTOS ====================
 // Intersection Observer for fade-in animations
@@ -1062,13 +1056,6 @@ document.querySelectorAll('.nav-links .nav-link').forEach(link => {
     });
 });
 
-// Close mobile menu when mobile contact button is clicked
-document.querySelectorAll('.mobile-nav-actions .btn-contact').forEach(btn => {
-    btn.addEventListener('click', () => {
-        closeMobileMenu();
-    });
-});
-
 // Close mobile menu when overlay is clicked
 if (navOverlay) {
     navOverlay.addEventListener('click', () => {
@@ -1134,16 +1121,16 @@ console.log('🚀 Portfolio loaded successfully!');
 // ==================== MODO OSCURO ====================
 // Theme toggle functionality
 const themeToggle = document.getElementById('themeToggle');
-const themeToggleMobile = document.getElementById('themeToggleMobile');
+const themeToggleDesktop = document.getElementById('themeToggleDesktop');
 const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
 
-// Get saved theme from localStorage or use system preference
+// Get saved theme from localStorage or default to light
 function getSavedTheme() {
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme) {
         return savedTheme;
     }
-    return prefersDarkScheme.matches ? 'dark' : 'light';
+    return 'light'; // Siempre inicia en modo claro
 }
 
 // Apply theme to document
@@ -1162,21 +1149,16 @@ function toggleTheme() {
     applyTheme(currentTheme);
 }
 
-// Initialize theme on page load - Default to light mode
-let currentTheme = localStorage.getItem('theme') || 'light';
+// Initialize theme on page load
+let currentTheme = getSavedTheme();
 applyTheme(currentTheme);
 
-// Theme toggle event listener
+// Theme toggle event listeners (both mobile and desktop)
 if (themeToggle) {
     themeToggle.addEventListener('click', toggleTheme);
 }
-
-// Mobile theme toggle event listener
-if (themeToggleMobile) {
-    themeToggleMobile.addEventListener('click', () => {
-        toggleTheme();
-        closeMobileMenu(); // Close mobile menu after theme change
-    });
+if (themeToggleDesktop) {
+    themeToggleDesktop.addEventListener('click', toggleTheme);
 }
 
 // Listen for system theme changes
