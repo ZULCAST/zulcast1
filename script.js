@@ -219,7 +219,7 @@ const translations = {
         certCiscoDesc: "Certificación en redes Cisco",
         certProgress: "En Progreso",
         certProgressIssuer: "Próximas certificaciones",
-        certProgressDesc: "DevOps, Docker, Kubernetes, Ciberseguridad",
+        certProgressDesc: "Ciberseguridad",
         certLink: "Ver credencial →",
 
         // Footer
@@ -384,7 +384,7 @@ const translations = {
         certCiscoDesc: "Cisco networking certification",
         certProgress: "In Progress",
         certProgressIssuer: "Upcoming certifications",
-        certProgressDesc: "DevOps, Docker, Kubernetes, Cybersecurity",
+        certProgressDesc: "Cybersecurity",
         certLink: "View credential →",
 
         // Footer
