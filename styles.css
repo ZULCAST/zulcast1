@@ -1892,8 +1892,7 @@ header.scrolled {
     font-size: 0.9375rem;
     line-height: 1.6;
     margin-bottom: 1.5rem;
-    text-align: justify;
-    text-justify: inter-word;
+    text-align: center;
 }
 
 .cert-link {
